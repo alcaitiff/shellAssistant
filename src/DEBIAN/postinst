@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#VARIABLES
+#Colors
+Y="\e[1;33m" # YELLOW
+B="\e[1;34m" # BLUE
+D="\e[0;39m" # default system console color: Normal :: make last in colors
+
+#Functions
+askit () {
+  unset input
+  while [ -z "${input}" ]; do
+    echo -e "${Y}$1${D}" >/dev/tty
+    read input </dev/tty
+  done
+  echo $input
+}
+
+#Functions
+promptyn () {
+	while true; do
+		echo -e "${Y}$1[Yes]?${D}"
+		read -e -p "Yes/no  " yn
+		if [ -z "$yn" ];then
+		   yn=Y
+		fi
+		case $yn in
+			[Yy]* ) return 0;;
+		  [Nn]* ) return 1;;
+		esac
+	done
+}
+
+#Code
+mkdir -p ${HOME}/.shellAssistant
+mkdir -p ${HOME}/.shellAssistant/commands
+cp /usr/local/shellAssistant/*.sh ${HOME}/.shellAssistant/commands
+
+if promptyn "Do you want to use ${HOME}/.bashrc"; then
+  SOURCE_FILE=${HOME}/.bashrc;
+else
+  SOURCE_FILE=$(askit "What is the full path of your shell source");
+fi
+echo "SOURCE_FILE=${SOURCE_FILE}" >> /usr/local/shellAssistant/include
+sed -i '/source \/usr\/local\/shellAssistant\/include/d' ${SOURCE_FILE}
+echo "source /usr/local/shellAssistant/include"  >> ${SOURCE_FILE}
+echo -e "Reset your shell using: ${B}source ${SOURCE_FILE}${D}"

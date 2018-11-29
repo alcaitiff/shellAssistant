@@ -1,0 +1,70 @@
+#!/bin/bash
+
+#Directory
+SHELL_ASSISTANT_HOME=${HOME}/.shellAssistant/commands
+
+#Colors
+R="\e[1;31m" # red: Warning message
+Y="\e[1;33m" # yellow: script Error
+G="\e[1;32m" # green: Standard message
+C="\e[1;33m" # CYAN: Questions
+DC="\e[1;36m" # CYAN: Message
+B="\e[1;34m" # BLUE: Message
+M="\e[1;35m" # MAGENTA: Command or Path
+D="\e[0;39m" # default system console color: Normal :: make last in colors
+
+#Functions
+promptyn () {
+	while true; do
+		echo -e "${C}$1[Yes]?${D}"
+		read -e -p "Yes/no  " yn
+		if [ -z "$yn" ];then
+		   yn=Y
+		fi
+		case $yn in
+			[Yy]* ) return 0;;
+		  [Nn]* ) return 1;;
+		esac
+	done
+}
+
+section () {
+	echo "________________________________________________"
+	echo ""
+	echo -e "${G}$1${D}"
+	echo "________________________________________________"
+	echo ""
+}
+
+result () {
+	if [ -z "$2" ];then
+		echo -e "${D}[${R}✗${D}] $1";
+	else
+		echo -e "${D}[${G}✓${D}] $1";
+	fi
+}
+
+le_log () {
+	if [ ! -f ${1} ]; then
+	    touch ${1}
+	    chmod a+rw ${1}
+	fi
+
+	grc tail -f ${1}
+}
+
+askit () {
+  unset input
+  while [ -z "${input}" ]; do
+    echo -e "${Y}$1${D}" >/dev/tty
+    read input </dev/tty
+  done
+  echo $input
+}
+
+include() {
+    for FILE in $( find "$1" -type f -print | sort )
+    do
+        source $FILE
+    done
+}

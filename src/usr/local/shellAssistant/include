@@ -1,0 +1,7 @@
+SHELL_ASSISTANT_HOME=${HOME}/.shellAssistant/commands
+
+for FILE in $( find "${SHELL_ASSISTANT_HOME}" -type f -print | sort )
+do
+  source $FILE
+done
+
