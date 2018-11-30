@@ -1,20 +1,20 @@
 # shellAssistant
 Creates a simple interface to add aliases and functions to your shell and maintain it.
 
-#Download the last build
+# Download the last build
 
 https://github.com/alcaitiff/shellAssistant/tree/master/build
 
-#Install
+# Install
 
     sudo dpkg -i shellAssistant.deb
 
-#Configure
+# Configure
 
 Define the shell source file. 
 Default ${HOME}/.bashrc
 
-#Use
+# Use
 
     commands - List all available commands
     sourcecode <command> - detail the code for the specified command
