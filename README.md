@@ -2,12 +2,15 @@
 Creates a simple interface to add aliases and functions to your shell and maintain it.
 
 #Download the last build
+
 https://github.com/alcaitiff/shellAssistant/tree/master/build
 
 #Install
+
     sudo dpkg -i shellAssistant.deb
 
 #Configure
+
 Define the shell source file. 
 Default ${HOME}/.bashrc
 
