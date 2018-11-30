@@ -18,6 +18,7 @@ Define the shell source file.
 Default ${HOME}/.bashrc
 
 If you want to use on more than one shell, just add the line bellow on your shell source file
+
     source /usr/local/shellAssistant/include
 
 # Use
