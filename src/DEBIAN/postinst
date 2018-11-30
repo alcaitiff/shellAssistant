@@ -34,7 +34,12 @@ promptyn () {
 #Code
 mkdir -p ${HOME}/.shellAssistant
 mkdir -p ${HOME}/.shellAssistant/commands
+
 cp /usr/local/shellAssistant/*.sh ${HOME}/.shellAssistant/commands
+
+CURRENT_USER=$(echo ${HOME} | sed "s/^[\/home]*\/\(.*\)$/\1/g")
+
+chown -R ${CURRENT_USER} ${HOME}/.shellAssistant
 
 if promptyn "Do you want to use ${HOME}/.bashrc"; then
   SOURCE_FILE=${HOME}/.bashrc;
