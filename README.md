@@ -38,3 +38,16 @@ If you want to use on more than one shell, just add the line bellow on your shel
     learn alias turnOff "sudo shutdown -h now"
     learn alias reboot "sudo reboot"
     learn alias remove "sudo apt remove"
+
+# Advanced
+
+After learn a function it can be used inside other functions
+
+    #the function yes_or_no will receive a parameter question and will return zero for y or Y
+    #the default value is no, therefore the capitalized N
+
+    learn function yes_or_no "echo \"\${1} [y/N]?\";read V;if [ -z \"\${V}\" ];then return 1;fi;if [[ \"\${V}\" =~ ^[Yy]\$ ]];then return 0;else return 1;fi;"
+
+    #Now you can use it inside other functions
+
+    learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi;"
