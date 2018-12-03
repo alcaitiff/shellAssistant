@@ -1,6 +1,8 @@
 # shellAssistant
 Creates a simple interface to add aliases and functions to your shell and maintain it.
 
+With this you can tell to your shell "learn" and it will learn how to do your common tasks easily
+
 # Download the last build
 
 https://github.com/alcaitiff/shellAssistant/tree/master/build
