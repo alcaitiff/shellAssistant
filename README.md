@@ -29,3 +29,12 @@ If you want to use on more than one shell, just add the line bellow on your shel
     forget <name> - remove a command
     search <name> - example of alias command to search a package on apt
     remember <name> - example of function command to search a word on history
+
+# Examples
+
+    learn function openIt "xdg-open \"\${1}\" > /dev/null 2>&1 &"
+    learn function directory "mkdir -p \"\${1}\" && cd \"\${1}\""
+    learn alias install "sudo apt install"
+    learn alias turnOff "sudo shutdown -h now"
+    learn alias reboot "sudo reboot"
+    learn alias remove "sudo apt remove"
