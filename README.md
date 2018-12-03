@@ -51,3 +51,27 @@ After learn a function it can be used inside other functions
     #Now you can use it inside other functions
 
     learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi;"
+
+# FAQ
+
+## What the learn command do?
+
+It creates a file with your command and save it on ${HOME}/.shellAssistant/commands
+
+## May I change it?
+
+Yes
+
+## Can I copy files from a machine to another?
+
+Yes
+
+## I copied the files, but my commands are not working. What I need to do?
+
+Just re-source your shell. 
+
+    $ source ~/.bashrc
+
+## How my commands become available on my shell?
+
+This shell scripts will add a line on your shell source file including all files in directory ${HOME}/.shellAssistant/commands
