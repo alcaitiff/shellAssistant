@@ -57,7 +57,17 @@ After learn a function it can be used inside other functions
     #the function yes_or_no will receive a parameter question and will return zero for y or Y
     #the default value is no, therefore the capitalized N
 
-    learn function yes_or_no "echo \"\${1} [y/N]?\";read V;if [ -z \"\${V}\" ];then return 1;fi;if [[ \"\${V}\" =~ ^[Yy]\$ ]];then return 0;else return 1;fi;"
+    learn function yes_or_no "\
+        echo \"\${1} [y/N]?\";\
+        read V;\
+        if [ -z \"\${V}\" ]; then \
+            return 1;\
+        fi;\
+        if [[ \"\${V}\" =~ ^[Yy]\$ ]]; then \
+            return 0;\
+        else \
+            return 1;\
+        fi;"
 
     #Now you can use it inside other functions
 
