@@ -5,7 +5,7 @@ With this you can tell to your shell "learn" and it will learn how to do your co
 
 # Download the last build
 
-https://github.com/alcaitiff/shellAssistant/tree/master/build
+https://github.com/alcaitiff/shellAssistant/releases
 
 # Install
 
