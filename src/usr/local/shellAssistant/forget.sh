@@ -1,4 +1,5 @@
 #!/bin/bash
+# Description: Remove a Shell Assistant Command
 function forget {
   COMMAND_FILE="${SHELL_ASSISTANT_HOME}/${1}.sh"
   if [ -f  "${COMMAND_FILE}" ]; then
