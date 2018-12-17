@@ -20,7 +20,8 @@ askit () {
 promptyn () {
 	while true; do
 		echo -e "${Y}$1[Yes]?${D}"
-		read "Yes/no  " yn
+		echo "Yes/no"
+		read yn </dev/tty
 		if [ -z "$yn" ];then
 		   yn=Y
 		fi
