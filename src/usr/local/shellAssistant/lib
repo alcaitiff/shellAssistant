@@ -17,7 +17,7 @@ D="\e[0;39m" # default system console color: Normal :: make last in colors
 promptyn () {
 	while true; do
 		echo -e "${C}$1[Yes]?${D}"
-		read -e -p "Yes/no  " yn
+		read "Yes/no  " yn
 		if [ -z "$yn" ];then
 		   yn=Y
 		fi

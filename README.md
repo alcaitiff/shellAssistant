@@ -32,7 +32,7 @@ If you want to use on more than one shell, just add the line bellow on your shel
 ```bash
     commands - List all available commands
     sourcecode <command> - detail the code for the specified command
-    learn [ <function|alias> [ <name> [ <code> ] ] ] - learn a new command
+    learn [ <function|alias> [ <name> [ <code> [ <Description> ] ] ] ] - learn a new command
     forget <name> - remove a command
     search <name> - example of alias command to search a package on apt
     remember <name> - example of function command to search a word on history
@@ -41,12 +41,12 @@ If you want to use on more than one shell, just add the line bellow on your shel
 # Examples
 
 ```bash
-    learn function openIt "xdg-open \"\${1}\" > /dev/null 2>&1 &"
-    learn function directory "mkdir -p \"\${1}\" && cd \"\${1}\""
-    learn alias install "sudo apt install"
-    learn alias turnOff "sudo shutdown -h now"
-    learn alias reboot "sudo reboot"
-    learn alias remove "sudo apt remove"
+    learn function openIt "xdg-open \"\${1}\" > /dev/null 2>&1 &" "Open a file with the default application"
+    learn function directory "mkdir -p \"\${1}\" && cd \"\${1}\"" "Create a directory and enter on it"
+    learn alias install "sudo apt install" "Alias to sudo apt install"
+    learn alias turnOff "sudo shutdown -h now" "Alias to shutdown -h now"
+    learn alias reboot "sudo reboot" "Alias to sudo reboot"
+    learn alias remove "sudo apt remove" "Alias to sudo apt remove"
 ```
 
 # Advanced
@@ -67,11 +67,12 @@ After learn a function it can be used inside other functions
             return 0;\
         else \
             return 1;\
-        fi;"
+        fi;"\
+        "Function to ask yes or no"
 
     #Now you can use it inside other functions
 
-    learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi;"
+    learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi;" "Function to power off"
 ```
 
 # FAQ
