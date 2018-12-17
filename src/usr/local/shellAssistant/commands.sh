@@ -7,7 +7,7 @@ function commands {
   do
     COMMANDLINE=$(echo ${w} | sed -e "s/\.sh$//g")${pad}
     DESCRIPTION=$(grep -i "^#.*Description:" ${SHELL_ASSISTANT_HOME}/${w} | sed -e "s/^#.*Description\:\(.*\)$/ \1/g")
-    echo "${B}${COMMANDLINE:0:30}${D} ${DESCRIPTION}"
+    echo -e "${B}${COMMANDLINE:0:30}${D} ${DESCRIPTION}"
   done
   echo -e "\n${G}Type ${B}sourcecode NAME${G} to see the command code${D}"
 }
