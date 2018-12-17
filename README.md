@@ -41,9 +41,9 @@ If you want to use on more than one shell, just add the line bellow on your shel
 # Examples
 
 ```bash
-    learn function openIt "xdg-open \"\${1}\" > /dev/null 2>&1 &" "Open a file with the default application"
+    learn function openIt "xdg-open \"\${1}\" > /dev/null 2>&1" "Open a file with the default application"
     learn function directory "mkdir -p \"\${1}\" && cd \"\${1}\"" "Create a directory and enter on it"
-    learn function wiki "xdg-open https://pt.wikipedia.org/wiki/\${1} > /dev/null 2>&1 & ;" "Search on wikipedia"
+    learn function wiki "xdg-open https://pt.wikipedia.org/wiki/\${1} > /dev/null 2>&1;" "Search on wikipedia"
     learn alias install "sudo apt install" "Alias to sudo apt install"
     learn alias turnOff "sudo shutdown -h now" "Alias to shutdown -h now"
     learn alias reboot "sudo reboot" "Alias to sudo reboot"
@@ -68,12 +68,12 @@ After learn a function it can be used inside other functions
             return 0;\
         else \
             return 1;\
-        fi;"\
+        fi"\
         "Function to ask yes or no"
 
     #Now you can use it inside other functions
 
-    learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi;" "Function to power off"
+    learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi" "Function to power off"
 ```
 
 # FAQ
