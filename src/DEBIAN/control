@@ -1,5 +1,5 @@
 Package: shell-assistant
-Version: 0.5.5
+Version: 0.6.2
 Maintainer: Alan Rabello
 Architecture: all
 Description: Creates a simple interface to add aliases and functions to your shell and maintain it.

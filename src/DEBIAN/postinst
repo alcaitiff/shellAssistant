@@ -32,18 +32,26 @@ promptyn () {
 	done
 }
 
-#Code
-mkdir -p ${HOME}/.shellAssistant
-mkdir -p ${HOME}/.shellAssistant/commands
-
-cp /usr/local/shellAssistant/*.sh ${HOME}/.shellAssistant/commands
-
 CURRENT_USER=$(echo ${HOME} | sed "s/^[\/home]*\/\(.*\)$/\1/g")
 
-chown -R ${CURRENT_USER} ${HOME}/.shellAssistant
+if promptyn "Your user is ${CURRENT_USER}"; then
+  CUSER=${CURRENT_USER};
+	CHOME=${HOME};
+else
+  CUSER=$(askit "Type your username");
+	CHOME=/home/${CUSER};
+fi
 
-if promptyn "Do you want to use ${HOME}/.bashrc"; then
-  SOURCE_FILE=${HOME}/.bashrc;
+#Code
+mkdir -p ${CHOME}/.shellAssistant
+mkdir -p ${CHOME}/.shellAssistant/commands
+
+cp /usr/local/shellAssistant/*.sh ${CHOME}/.shellAssistant/commands
+
+chown -R ${CUSER} ${CHOME}/.shellAssistant
+
+if promptyn "Do you want to use ${CHOME}/.bashrc"; then
+  SOURCE_FILE=${CHOME}/.bashrc;
 else
   SOURCE_FILE=$(askit "What is the full path of your shell source");
 fi
