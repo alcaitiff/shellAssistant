@@ -1,23 +1,24 @@
 # shellAssistant
+
 Creates a simple interface to add aliases and functions to your shell and maintain it.
 
 With this you can tell to your shell "learn" and it will learn how to do your common tasks easily
 
-# Download the last build
+## Download the last build
 
-https://github.com/alcaitiff/shellAssistant/releases
+<https://github.com/alcaitiff/shellAssistant/releases>
 
-# Install
+## Install
 
 ```bash
     sudo dpkg -i shellAssistant.deb
 ```
 
-# Configure
+## Configure
 
 When asked on the post install script.
 
-Define the shell source file. 
+Define the shell source file.
 
 Default ${HOME}/.bashrc
 
@@ -27,18 +28,20 @@ If you want to use on more than one shell, just add the line bellow on your shel
     source /usr/local/shellAssistant/include
 ```
 
-# Use
+## Use
 
 ```bash
     commands - List all available commands
     sourcecode <command> - detail the code for the specified command
     learn [ <function|alias> [ <name> [ <code> [ <Description> ] ] ] ] - learn a new command
-    forget <name> - remove a command
+    forget <command> - remove a command
+    change <command> - edit a command 
+    xopen <file> - open a file with the default application 
     search <name> - example of alias command to search a package on apt
     remember <name> - example of function command to search a word on history
 ```
 
-# Examples
+## Examples
 
 ```bash
     learn function openIt "xdg-open \"\${1}\" > /dev/null 2>&1" "Open a file with the default application"
@@ -50,7 +53,7 @@ If you want to use on more than one shell, just add the line bellow on your shel
     learn alias remove "sudo apt remove" "Alias to sudo apt remove"
 ```
 
-# Advanced
+## Advanced
 
 After learn a function it can be used inside other functions
 
@@ -76,7 +79,7 @@ After learn a function it can be used inside other functions
     learn function PowerOFF "if yes_or_no \"Are you sure\"; then sudo shutdown -h now;fi" "Function to power off"
 ```
 
-# FAQ
+## FAQ
 
 ## What the learn command do?
 
@@ -92,7 +95,7 @@ Yes
 
 ## I copied the files, but my commands are not working. What I need to do?
 
-Just re-source your shell. 
+Just re-source your shell.
 
 ```bash
     $ source ~/.bashrc
