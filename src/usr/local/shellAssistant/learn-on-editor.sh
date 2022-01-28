@@ -36,5 +36,5 @@ function learn-on-editor {
 		description=${4};
 	fi
 
-  learn $1 $2 "${command}" "${description}" && change "${command}" && resource;
+  learn $1 $2 "${command}" "${description}" && change "${2}";
 }
