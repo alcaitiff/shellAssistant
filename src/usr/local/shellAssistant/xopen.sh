@@ -1,5 +1,5 @@
 #!/bin/bash
 # Description: Open a file
 function xopen { 
-xdg-open "${1}" > /dev/null 2>&1 ; 
+  xdg-open "${1}" > /dev/null 2>&1 ; 
 }
