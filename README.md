@@ -34,9 +34,11 @@ If you want to use on more than one shell, just add the line bellow on your shel
     commands - List all available commands
     sourcecode <command> - detail the code for the specified command
     learn [ <function|alias> [ <name> [ <code> [ <Description> ] ] ] ] - learn a new command
+    learn-on-editor [ <function|alias> [ <name> ] ] - learn a new command and open it in gedit
     forget <command> - remove a command
     change <command> - edit a command 
     xopen <file> - open a file with the default application 
+    resource - reload your commands
     search <name> - example of alias command to search a package on apt
     remember <name> - example of function command to search a word on history
 ```
@@ -51,6 +53,7 @@ If you want to use on more than one shell, just add the line bellow on your shel
     learn alias turnOff "sudo shutdown -h now" "Alias to shutdown -h now"
     learn alias reboot "sudo reboot" "Alias to sudo reboot"
     learn alias remove "sudo apt remove" "Alias to sudo apt remove"
+    learn-on-editor function myfunction
 ```
 
 ## Advanced
